@@ -1,0 +1,185 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  text-align: center;
+  color: white;
+}
+
+.text-overlay h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.text-overlay p {
+  font-size: 1.5em;
+  margin: 0;
+}
+.offers-section {
+  /* Other existing styles */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Ensure content stays in a single line */
+}
+
+
+.tour {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: 350px; /* Set a fixed width for each tour card */
+  margin-right: 20px; /* Add some space between cards */
+}
+
+.tour:last-child {
+  margin-bottom: 100px; /* Add extra margin at the bottom of the last tour */
+}
+.tour-info {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  height: 220px; /* Set a fixed height for the tour including details */
+}
+
+.tour-info img {
+  width: 100%;
+  height: 200px; /* Adjust the image height as needed */
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.tour-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  color: white;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.tour-info:hover .tour-details {
+  transform: translateY(0);
+}
+
+.book-now {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.book-now:hover {
+  background-color: lightblue;
+}
+.tour-container {
+  display: flex;
+  flex-wrap: nowrap; /* Ensure they stay in a single row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.destination {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 40px; 
+}
+.destination-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.destination-img {
+  width: 100%;
+  height: 250px; /* Adjust this value to increase or decrease the image height */
+  display: block;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-bottom: 1px solid #ddd;
+}
+
+.destination-description {
+  padding: 15px;
+}
+
+.destination-description h3 {
+  margin-top: 0;
+}
+
+.description-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.description-content.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Media Query for Responsive Layout */
+@media screen and (max-width: 768px) {
+  .destination {
+    grid-template-columns: 1fr;
+  }
+}
+
+.details-button:hover {
+  background-color: lightblue;
+  border-color: lightblue;
+}
+
+.destination-item:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About us</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+   body {
+      background-color: #f3f3f3;
+      color: #333;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .about-us-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 20px;
+    }
+
+    .company-details {
+      width: 60%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .video-container {
+      width: 60%; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px; 
+      animation: slideIn 1s ease-out;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .quotation-container {
+      text-align: center;
+    
+      margin-bottom: 100px;
+    }
+
+    .quotation {
+      display: none;
+      font-style: italic;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html"> <img src="logo.png" width="60" height="60"> </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="destination.html">Destinations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="book_now.html">Book Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Packages.html">Packages</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="about.html">About US</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="about-us-container">
+    <!-- Company details -->
+    <div class="company-details">
+      <h2>Ali's Tour</h2>
+      <p>Address: 123 Street, City, Country</p>
+      <p>Contact: info@company.com | +1 234 567 890</p>
+      <p style="max-width: 800px; text-align: center;"> Embark on unforgettable journeys with our premier travel company. We curate extraordinary adventures, from breathtaking destinations to seamless itineraries. Discover a world of exploration, where every trip is an immersive experience crafted just for you. Let us be your guide to boundless discovery and unparalleled travel</p>
+    </div>
+    
+    <!-- Video section -->
+    <div class="video-container">
+      <div class="video-wrapper">
+       
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/CgSQe64SP6c?si=ByD7rvK_O6sHntys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  <div class="quotation-container">
+    <div class="quotation">"Traveling – it leaves you speechless, then turns you into a storyteller."</div>
+    <div class="quotation">"The world is a book, and those who do not travel read only a page."</div>
+    <div class="quotation">"Adventure is worthwhile."</div>
+   
+  </div>
+<footer class="footer fixed-bottom  bg-light text-center py-2">
+    © 2023 Ali'sTours.com
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      let currentIndex = 0;
+      const quotations = $(".quotation");
+      quotations.eq(currentIndex).show();
+
+      function rotateQuotations() {
+        quotations.eq(currentIndex).fadeOut(500);
+        currentIndex = (currentIndex + 1) % quotations.length;
+        quotations.eq(currentIndex).fadeIn(500);
+      }
+
+      setInterval(rotateQuotations, 10000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Now</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="icon" href="logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-image: url('booknow.jpg');
+            background-repeat: no-repeat;
+            height: 100%;
+            background-size: cover;
+        }
+      </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"> <img src="logo.png" width="60" height="60"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="destination.html">Destinations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="book_now.html">Book Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Packages.html">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<body>
+ <div class="container mt-5">
+    <h2 class="text-center mb-4">Book Now</h2>
+    <form id="bookingForm">
+      <div class="form-group">
+        <label for="fullName">Full Name:</label>
+        <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="contactNo">Contact Number:</label>
+        <input type="tel" class="form-control" id="contactNo" placeholder="Enter your contact number" required>
+      </div>
+      <div class="form-group">
+            <label for="destination">Destination:</label>
+            <select class="form-control" id="destination" required>
+                <option value="" disabled selected>Choose Destination</option>
+                <option value="Skardu">Skardu</option>
+                <option value="Hunza">Hunza</option>
+                <option value="Islamabad">Islamabad</option>
+                <option value="Naran Kaghan">Naran Kaghan</option>
+                <option value="Kashmir">Kashmir</option>
+                <option value="Lahore">Lahore</option>
+                <option value="Murree">Murree</option>
+                <option value="Swat">Swat</option>
+               
+            </select>
+        </div>
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select class="form-control" id="paymentMethod" required>
+          <option value="" disabled selected>Choose payment method</option>
+          <option value="creditCard">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="bankTransfer">Bank Transfer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="package">Select Package:</label>
+        <select class="form-control" id="package" required>
+          <option value="" disabled selected>Choose Package</option>
+          <option value="1200">Family Package</option>
+          <option value="600">Couple Package</option>
+          <option value="400">Solo Package</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="totalPrice">Total Price:</label>
+        <input type="text" class="form-control" id="totalPrice" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Book Now</button>
+    </form>
+  </div>
+  
+  <audio id="successSound" src="sound.mp3"></audio>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+     function updateTotalPrice() {
+    const packageDropdown = document.getElementById('package');
+    const totalPriceInput = document.getElementById('totalPrice');
+    const selectedPackage = packageDropdown.value;
+
+    if (selectedPackage !== "") {
+      totalPriceInput.value = `$${selectedPackage} USD`;
+    } else {
+      totalPriceInput.value = "";
+    }
+  }
+
+  // Add the event listener for package change (same as your existing code)
+  document.getElementById('package').addEventListener('change', updateTotalPrice);
+
+  // Add the event listener for form submission
+  document.getElementById('bookingForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting (for demo purposes)
+
+    // Call the function to update total price when the form is submitted
+    updateTotalPrice();
+const successSound = document.getElementById('successSound');
+    successSound.play();
+    // Show payment successful alert
+    alert('Payment Successful! Thank you for booking.');
+
+    // Optional: You can reset the form after showing the alert
+    this.reset();
+  });
+  </script>
+  </html>
+</body>

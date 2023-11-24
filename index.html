@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ali's Tours</title>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/x-icon">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+        @keyframes alertAnimation {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        h3 {
+            text-align: center;
+            animation: alertAnimation 2s infinite;
+        }
+        p{
+          text-align: center;
+        }
+        a{
+          text-align: center;
+        }
+       
+.hero-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+    
+    .text-overlay {
+      text-align: center;
+      z-index: 1;
+      color: white;
+    }
+
+    .text-overlay h1 {
+      font-size: 3.5rem;
+      animation: slideIn 1s ease-in-out forwards;
+    }
+
+    .text-overlay p {
+      font-size: 1.5rem;
+      animation: fadeIn 1.5s ease-in-out forwards;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html"> <img src="logo.png" width="60" height="60"> </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="destination.html">Destinations</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="book_now.html">Book Now</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Packages.html">Packages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ <div class="hero-container">
+  <img src="background.jpg" alt="Background Image" id="background-img">
+  <div class="text-overlay">
+      <h1>Explore the Wonders of Pakistan</h1>
+      <p>Book Your Adventure Today</p>
+    </div>
+  </div>
+
+<h3 align="center">Hot offers!</h3>
+<div class="tour-container">
+<div class="tour">
+  <div class="tour-info">
+    <img src="gilgit.jpg" alt="Gilgit Balistan">
+    <div class="tour-details">
+      <h3>9 Days Gilgit </h3>
+      <p>Gilgit Baltistan</p>
+      <p>event March - November</p>
+      <p>schedule 9 days</p>
+      <a href="book_now.html" class="book-now">BOOK NOW</a>
+    </div>
+  </div>
+</div>
+  <div class="tour">
+    <div class="tour-info">
+      <img src="skardu.jpg" alt="Skardu">
+      <div class="tour-details">
+      <h3>7 Days Skardu</h3>
+      <p>Skardu, Gilgit Baltistan</p>
+      <p>event March - November</p>
+      <p>schedule 7 days</p>
+      <a href="book_now.html" class="book-now">BOOK NOW</a>
+    </div>
+  </div>
+  </div>
+<div class="tour">
+    <div class="tour-info">
+        <img src="Fairy Meadows.jpg" alt="Gilgit Balistan">
+        <div class="tour-details">
+            <h3>5 Days Meadows</h3>
+            <p>Fairy Meadows, Gilgit Baltistan</p>
+            <p>event March - November</p>
+            <p>schedule 5 days</p>
+            <a href="book_now.html" class="book-now">BOOK NOW</a>
+        </div> <!-- Add this closing tag -->
+    </div>
+</div>
+
+  <div class="tour">
+    <div class="tour-info">
+       <img src="hunza.jpg" alt="Gilgit Balistan">
+       <div class="tour-details">
+      <h3>5 Days Hunza</h3>
+      <p>Hunza, Gilgit Baltistan</p>
+      <p>event March - November</p>
+      <p>schedule 5 days</p>
+      <a href="book_now.html" class="book-now">BOOK NOW</a>
+    </div>
+  </div>
+  </div>
+</div>
+
+<footer class="footer fixed-bottom  bg-light text-center py-2">
+    © 2023 Ali'sTours.com
+  </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ <script>
+    const elementsToScale = document.querySelectorAll('h3, p, a');
+
+    elementsToScale.forEach(element => {
+      let scaleUp = true;
+
+      function animateScale() {
+        element.style.transform = scaleUp ? 'scale(1.1)' : 'scale(1)';
+        scaleUp = !scaleUp;
+      }
+
+      setInterval(animateScale, 2000); 
+    });
+    </script>
+</body>
+</html>
